@@ -1,0 +1,43 @@
+<html>
+<head>
+	<title>The Ultimate Travel To-Do List</title>
+	<link rel="stylesheet" type="text/css" href="/application.css">
+</head>
+
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="span12">
+				<h1><center>To-Do List Before a Trip</center></h1>
+			</div>
+		</div>
+
+	<div class="row">
+		<div class="span10">
+			<ul class="list group task-list"><center>
+				<% @to_dos.each do |to_do| %>
+					<li><%= to_do %></li>
+				<% end %>
+			</ul>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="span12"><center>
+			<h3 class="task-heading">Add A New Task:</h3>
+			<form class="form-inline" action="/travel_to_dos" method="post">
+				<div class="form-group">
+					Task:<input type="text" id="description" name="description">
+				</div>
+				<div class="form-group">
+					Category:<input type="text" id="category" name="category">
+				</div>
+				<div class="form-group">
+				</br>
+					<button type="submit" class="btn btn-default">Add To List</button>
+				</div>
+			</form>
+		</div></center>
+	</div>
+</body>
+</html>
